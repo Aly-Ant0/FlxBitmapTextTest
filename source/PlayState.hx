@@ -23,6 +23,7 @@ import flixel.addons.effects.chainable.FlxWaveEffect;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.graphics.atlas.FlxAtlas;
 import flixel.graphics.frames.FlxAtlasFrames;
+import flixel.graphics.frames.FlxBitmapFont;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
@@ -1191,7 +1192,7 @@ class PlayState extends MusicBeatState
 		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
 
-		bitmaptst= new FlxBitmapText(FlxBitmapFont.fromMonospace(Paths.image('numbers', 'shared')),
+			bitmaptst= new FlxBitmapText(FlxBitmapFont.fromMonospace(Paths.image('numbers', 'shared')),
 			'0123456789', FlxPoint.get(7, 11));
 			bitmaptst.antialiasing = false;
 			bitmaptst.y = scoreTxt.y + 20;
