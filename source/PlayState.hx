@@ -1194,7 +1194,7 @@ class PlayState extends MusicBeatState
 		bitmaptst= new FlxBitmapText(FlxBitmapFont.fromMonospace(Paths.image('numbers', 'shared')),
 			'0123456789', FlxPoint.get(7, 11));
 			bitmaptst.antialiasing = false;
-			bitmaptst.y = scoreText.y + 20;
+			bitmaptst.y = scoreTxt.y + 20;
 			bitmaptst.screenCenter(X);
 			add(bitmaptst);
 
