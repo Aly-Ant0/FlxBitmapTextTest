@@ -29,6 +29,7 @@ import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.system.FlxSound;
 import flixel.text.FlxText;
+import flixel.text.FlxBitmapText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.ui.FlxBar;
@@ -1187,6 +1188,12 @@ class PlayState extends MusicBeatState
 		scoreTxt.borderSize = 1.25;
 		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
+
+		text = new FlxBitmapText(FlxBitmapFont.fromMonospace(Paths.image('numbers', 'shared')),
+			'0123456789', FlxPoint.get(5, 11));
+			text.antialiasing = false;
+			add(text);
+
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
