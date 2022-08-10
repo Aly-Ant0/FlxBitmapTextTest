@@ -202,6 +202,8 @@ class PlayState extends MusicBeatState
 	public var botplaySine:Float = 0;
 	public var botplayTxt:FlxText;
 
+	var bitmaptst:FlxBitmapText;
+
 	public var iconP1:HealthIcon;
 	public var iconP2:HealthIcon;
 	public var camHUD:FlxCamera;
@@ -1189,10 +1191,12 @@ class PlayState extends MusicBeatState
 		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
 
-		text = new FlxBitmapText(FlxBitmapFont.fromMonospace(Paths.image('numbers', 'shared')),
-			'0123456789', FlxPoint.get(5, 11));
-			text.antialiasing = false;
-			add(text);
+		bitmaptst= new FlxBitmapText(FlxBitmapFont.fromMonospace(Paths.image('numbers', 'shared')),
+			'0123456789', FlxPoint.get(7, 11));
+			bitmaptst.antialiasing = false;
+			bitmaptst.y = scoreText.y + 20;
+			bitmaptst.screenCenter(X);
+			add(bitmaptst);
 
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
@@ -1213,6 +1217,7 @@ class PlayState extends MusicBeatState
 		iconP1.cameras = [camHUD];
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
+		bitmaptst.cameras = [camHUD];
 		botplayTxt.cameras = [camHUD];
 		timeBar.cameras = [camHUD];
 		timeBarBG.cameras = [camHUD];
@@ -2287,6 +2292,8 @@ class PlayState extends MusicBeatState
 		+ ' | Misses: ' + songMisses
 		+ ' | Rating: ' + ratingName
 		+ (ratingName != '?' ? ' (${Highscore.floorDecimal(ratingPercent * 100, 2)}%) - $ratingFC' : '');
+
+		bitmaptst.text = "" + songScore;
 
 		if(ClientPrefs.scoreZoom && !miss && !cpuControlled)
 		{
