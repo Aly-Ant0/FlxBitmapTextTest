@@ -1192,12 +1192,12 @@ class PlayState extends MusicBeatState
 		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
 
-		bitmaptst= new FlxBitmapText(FlxBitmapFont.fromMonospace(Paths.image('numbers', 'shared'), '0123456789', FlxPoint.get(7, 11)));
+		bitmaptst= new FlxBitmapText(FlxBitmapFont.fromMonospace(Paths.image('numbers', 'shared'), '0123456789', FlxPoint.get(10, 0)));
 		bitmaptst.antialiasing = false;
 		bitmaptst.y = scoreTxt.y + 50;
 		bitmaptst.screenCenter(X);
+		bitmaptst.scale.set(1.6, 1.6);
 		add(bitmaptst);
-
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
