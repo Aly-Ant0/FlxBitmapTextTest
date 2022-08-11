@@ -1192,12 +1192,11 @@ class PlayState extends MusicBeatState
 		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
 
-			bitmaptst= new FlxBitmapText(FlxBitmapFont.fromMonospace(Paths.image('numbers', 'shared')),
-			'0123456789', FlxPoint.get(7, 11));
-			bitmaptst.antialiasing = false;
-			bitmaptst.y = scoreTxt.y + 20;
-			bitmaptst.screenCenter(X);
-			add(bitmaptst);
+		bitmaptst= new FlxBitmapText(FlxBitmapFont.fromMonospace(Paths.image('numbers', 'shared'), '0123456789', FlxPoint.get(7, 11));
+		bitmaptst.antialiasing = false;
+		bitmaptst.y = scoreTxt.y + 50;
+		bitmaptst.screenCenter(X);
+		add(bitmaptst);
 
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
@@ -2294,7 +2293,7 @@ class PlayState extends MusicBeatState
 		+ ' | Rating: ' + ratingName
 		+ (ratingName != '?' ? ' (${Highscore.floorDecimal(ratingPercent * 100, 2)}%) - $ratingFC' : '');
 
-		bitmaptst.text = "" + songScore;
+	aptst.text = "" + songScore;
 
 		if(ClientPrefs.scoreZoom && !miss && !cpuControlled)
 		{
