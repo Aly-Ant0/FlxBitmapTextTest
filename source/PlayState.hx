@@ -2293,7 +2293,7 @@ class PlayState extends MusicBeatState
 		+ ' | Rating: ' + ratingName
 		+ (ratingName != '?' ? ' (${Highscore.floorDecimal(ratingPercent * 100, 2)}%) - $ratingFC' : '');
 
-	aptst.text = "" + songScore;
+		bitmaptst.text = "" + songScore;
 
 		if(ClientPrefs.scoreZoom && !miss && !cpuControlled)
 		{
